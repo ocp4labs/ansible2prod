@@ -7,12 +7,12 @@
   tasks:
     - name: Install apache
       yum:
-        name: apache2
+        name: httpd
         state: latest
 
     - name: Enable and start apache
       service:
-        name: apache2
+        name: httpd
         enabled: true
         state: started
   
@@ -30,5 +30,5 @@
   handlers:
     - name: restart apache
       service:
-        name: apache2
+        name: httpd
         state: restarted
